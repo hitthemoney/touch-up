@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Touch Up</title>
+    <meta name="description" content="A Photo Editor For Browser">
+    <meta name="keywords" content="photo editor">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="">
+    <meta name="og:title" content="">
+    <meta name="og:url" content="">
+    <meta name="og:site_name" content="">
+    <meta name="og:type" content="website">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <h1 id="title">Touch Up <a href="changelog.txt"id="smallTitle"> v1.0.0</a><br><span>Photo Editor | <a id="titleA" href="https://hitthemoney.com">hitthemoney</a></span></h1>
+    <div id="canvasSize">
+        Canvas Size: <b id="xVal">500</b> px by <b id="yVal">500</b> px
+    </div>
+    <div id="holder">
+        <div id="canvasDiv">
+            <canvas height="500" width="500" style="background-color: rgba(255, 255, 255, 0.5); border: 3px solid #fff;"
+                id="canvas"></canvas>
+            <div draggable="true" id="brush"></div>
+        </div>
+        <div id="fileDiv">
+            <input id="fileInput" type="file" style="display: none;" accept="image/png, image/jpeg, image/svg+xml">
+            <button onclick="document.getElementById('fileInput').click();" id="fileButton">Upload Image</button>
+            <button onclick="resetCanvas()">Clear/Create
+                New Canvas</button>
+            <button onclick="downloadImage()">Download</button>
+            <a href="./test.png" id="downloadA" download="Untitled"></a>
+        </div>
+    </div>
+    <div id="settings">
+        <h1 id="settingsHeader">Settings</h1>
+        <hr>
+        <div class="setting">
+            <span class="settingName">Brush Size</span>
+            <input id="sizeInput" placeholder="Brush Size" onkeydown="changeBrushSize(this.value)"
+                onchange="changeBrushSize(this.value)" type="number" value="25"> px
+        </div>
+        <div class="setting">
+            <span class="settingName">Color</span>
+            <input onchange="brushColor = this.value; document.getElementById('colorVal').innerHTML = this.value"
+                id="colorInput" type="color" value="#000000">
+            <span id="colorVal">#000000</span>
+        </div>
+        <label class="setting" id="eraserContainer">
+            <span id="eraserText">Eraser:</span>
+            <input id="eraserCheckbox" type="checkbox" onclick="activateEraser(this.checked)">
+            <span id="eraserCheckmark"></span>
+        </label>
+    </div>
+    <script src="js/index.js"></script>
+    <script src="js/brush.js"></script>
+</body>
+
+</html>

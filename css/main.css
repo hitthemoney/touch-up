@@ -1,0 +1,173 @@
+html,
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: #0e0e22;
+            padding: 0px;
+            margin: 0px;
+            color: #fff;
+        }
+
+        #title {
+            font-size: 50px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        #canvasDiv {
+            padding: 0px;
+            height: 506px;
+            width: 506px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #brush {
+            position: absolute;
+            padding: 10px;
+            cursor: none;
+            z-index: 10;
+            background-color: transparent;
+            height: 50px;
+            width: 50px;
+            box-sizing: border-box;
+            border: 5px solid #fff;
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        #title span {
+            font-size: 30px;
+            font-weight: normal;
+        }
+
+        #settings {
+            border-radius: 10px;
+            padding: 10px;
+            position: absolute;
+            margin-top: 0px;
+            padding-top: 9px;
+            right: 10px;
+            top: 10px;
+            width: max-content;
+            height: max-content;
+            overflow-x: hidden;
+            overflow-y: auto;
+            border: solid 3px #fff;
+        }
+
+        #settingsHeader {
+            display: inline;
+            font-size: 30px;
+        }
+
+        .setting {
+            margin-top: 5px;
+        }
+
+        #fileDiv {
+            margin-top: 10px;
+        }
+
+        #fileDiv button {
+            font-size: 20px;
+        }
+
+        /*#fileInput {
+            width: 150px;
+        }*/
+
+        #eraserContainer {
+            display: block;
+            margin-bottom: 12px;
+            -webkit-user-select: none;
+            cursor: pointer;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        #eraserCheckmark {
+            position: absolute;
+            border-radius: 4px;
+            height: 15px;
+            width: 15px;
+            border: 3px solid #fff;
+        }
+
+        #eraserContainer input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        #eraserContainer:hover input~#eraserCheckmark {
+            border-color: #e8e8e8;
+        }
+
+        #eraserContainer input:checked~#eraserCheckmark {
+            border-color: #131313;
+        }
+
+        #eraserCheckmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        #eraserContainer input:checked~#eraserCheckmark:after {
+            display: block;
+        }
+
+        #eraserContainer #eraserCheckmark:after {
+            width: 6.25px;
+            height: 12.5px;
+            border: solid;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        #eraserText {
+            margin-right: 7px;
+        }
+
+        #canvasSize {
+            font-size: 20px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+
+        #holder {
+            margin-left: 10px;
+        }
+
+        #titleA {
+            color: blue;
+            text-decoration: none;
+        }
+
+        #titleA:hover {
+            text-decoration: underline;
+        }
+
+        #smallTitle {
+            font-size: 25px;
+            color: blue;
+            text-decoration: none;
+        }
+
+        #smallTitle:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+            border-radius: 5px;
+        }
+
+        input {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+        }
